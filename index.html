@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #212121;
+        overflow-x: hidden;
+        color: rgb(85, 82, 82);
+        font-family: 'Bebas Neue', sans-serif;
+      }
+
+      .marquee {
+        position: relative;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 3rem;
+        font-weight: 400;
+        letter-spacing: 2px;
+        z-index: 1000;
+      }
+
+      .marquee span {
+        display: inline-block;
+        padding-left: 100%;
+        animation: marquee 15s linear infinite;
+      }
+
+      .marquee.bottom span {
+        animation: marquee 20s linear infinite reverse;
+      }
+
+      @keyframes marquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-100%); }
+      }
+
+      #root {
+        margin-top: 0px; /* leave space for top marquee */
+        margin-bottom: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top scrolling text -->
+    <div class="marquee top">
+      <span>ROYAL ENFIELD ROYAL ENFIELD ROYAL ENFIELD ROYAL ENFIELD </span>
+    </div>
+
+    <div id="root" style="height: 610vh;"></div>
+
+    <!-- Bottom scrolling text -->
+    <div class="marquee bottom" style="bottom: 0;">
+      <span>ROYAL ENFIELD ROYAL ENFIELD ROYAL ENFIELD ROYAL ENFIELD </span>
+    </div>
+    
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
